@@ -15,12 +15,6 @@ CONFIG = {
 }
 
 
-engine = create_engine(
-    "{engine}://{user}:{password}@{host}/{db}".format(**CONFIG),
-    echo=True
-)
-
-
 def get_table_name(name: str) -> str:
     return inflection.underscore(name)
 
@@ -40,6 +34,10 @@ class BaseDBModel(SQLModel):
 
 def get_db_session() -> Generator:
     """Provide a transactional scope around a series of operations."""
+    engine = create_engine(
+        "{engine}://{user}:{password}@{host}/{db}".format(**CONFIG),
+        echo=True
+    )
     session = Session(engine)
     try:
         yield session
