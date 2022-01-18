@@ -5,7 +5,7 @@ from sqlmodel.pool import StaticPool
 from model.item import Item
 from model.warehouse import Warehouse
 from model.inventory import Inventory
-from tests import app
+from main import app
 from db import get_db_session
 
 
