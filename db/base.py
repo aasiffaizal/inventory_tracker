@@ -4,14 +4,14 @@ from typing import Generator, Optional
 import inflection
 from sqlalchemy.orm import declared_attr
 from sqlmodel import Field, Session, SQLModel, create_engine, func, TIMESTAMP, Column
-
+import os
 
 CONFIG = {
-    'engine': 'mysql',
-    'user': 'root',
-    'password': 'password',
-    'host': 'localhost',
-    'db': 'logistics'
+    'engine': os.environ.get('ENGINE'),
+    'user': os.environ.get('USER'),
+    'password': os.environ.get('PASSWORD'),
+    'host': os.environ.get('HOST'),
+    'db': os.environ.get('DB')
 }
 
 
