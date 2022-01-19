@@ -2,6 +2,6 @@ codecov:
   status:
     project:
       default:
-        enabled: yes
+        enabled: no
         target: 1
-        threshold: 0.1
+        threshold: 10
