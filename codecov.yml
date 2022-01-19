@@ -1,7 +1,6 @@
-codecov:
+coverage:
   status:
     project:
       default:
-        enabled: no
-        target: 1
-        threshold: 10
+        target: 90%
+        threshold: 10%
