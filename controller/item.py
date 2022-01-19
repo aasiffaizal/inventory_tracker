@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import StreamingResponse
 from sqlmodel import Session
 
+from constants import ITEM_CSV_HEADERS
 from db import get_db_session
 from model.item import Item, ItemEditableFields
 from service.item import item_crud, validate_item_id
@@ -42,7 +43,7 @@ async def get_items_csv(db_session: Session = Depends(get_db_session)):
     items = item_crud.get_multiple_values(db_session)
     if not items:
         raise HTTPException(status_code=404, detail='No Items present')
-    csv_string = get_csv_from_orm(items)
+    csv_string = get_csv_from_orm(items, headers=ITEM_CSV_HEADERS)
     response = StreamingResponse(csv_string, media_type="text/csv")
     response.headers["Content-Disposition"] = "attachment; filename=items.csv"
     return response

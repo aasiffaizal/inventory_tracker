@@ -5,9 +5,10 @@ from fastapi.encoders import jsonable_encoder
 from sqlmodel import SQLModel
 
 
-def get_csv_from_orm(data: list[SQLModel]) -> StringIO:
+def get_csv_from_orm(data: list[SQLModel], headers: list[str] = None) -> StringIO:
     file_string = StringIO()
-    headers = data[0].dict().keys()
+    if headers is None:
+        headers = data[0].dict().keys()
     writer = csv.DictWriter(file_string, fieldnames=headers)
     writer.writeheader()
     for row in data:
