@@ -1,8 +1,9 @@
+from fastapi.encoders import jsonable_encoder
 from fastapi.testclient import TestClient
+
 from model.inventory import Inventory
 from model.item import Item
 from model.warehouse import Warehouse
-from fastapi.encoders import jsonable_encoder
 
 TEST_INVENTORY_1 = {
     "name": "",

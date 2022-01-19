@@ -1,6 +1,7 @@
+from sqlmodel import Session, select
+
 from db import BaseDBModel
 from service.base_crud import BaseCRUD
-from sqlmodel import Session, select
 
 
 class TestTable(BaseDBModel, table=True):

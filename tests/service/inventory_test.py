@@ -1,8 +1,9 @@
-from service.inventory import validate_inventory_fields, inventory_crud
-from sqlmodel import Session
 import pytest
 from fastapi import HTTPException
+from sqlmodel import Session
+
 from model.inventory import Inventory, InventoryEditableFields
+from service.inventory import validate_inventory_fields, inventory_crud
 
 
 @pytest.mark.asyncio

@@ -1,7 +1,8 @@
+from fastapi.encoders import jsonable_encoder
 from fastapi.testclient import TestClient
 from sqlmodel import Session, select
+
 from model.warehouse import Warehouse
-from fastapi.encoders import jsonable_encoder
 
 TEST_WAREHOUSE = {
     "name": "Warehouse2",
