@@ -1,7 +1,8 @@
 import csv
 from io import StringIO
-from sqlmodel import SQLModel
+
 from fastapi.encoders import jsonable_encoder
+from sqlmodel import SQLModel
 
 
 def get_csv_from_orm(data: list[SQLModel]) -> StringIO:

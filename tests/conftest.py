@@ -2,11 +2,12 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlmodel import Session, SQLModel, create_engine
 from sqlmodel.pool import StaticPool
+
+from db import get_db_session
+from main import app
+from model.inventory import Inventory
 from model.item import Item
 from model.warehouse import Warehouse
-from model.inventory import Inventory
-from main import app
-from db import get_db_session
 
 
 @pytest.fixture(name="session")

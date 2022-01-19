@@ -1,8 +1,9 @@
 import csv
 
-from utils import get_csv_from_orm
-from sqlmodel import SQLModel
 from fastapi.encoders import jsonable_encoder
+from sqlmodel import SQLModel
+
+from utils import get_csv_from_orm
 
 
 def test_get_csv_from_orm_returns_string():
