@@ -21,11 +21,11 @@ The steps for running the application locally are also provided below.
 * **[API Collection](#api-collection)**
 
 ## Installation
-###MySQL
+### MySQL
 MySQL is used as the database for this application hence it is required to have it in the system. The steps that needs 
 to be followed to install MySQL 8.0 for any OS is found [here](https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/).
 
-###Python
+### Python
 The application is developed with python 3.10.1, hence its compatibility with previous versions is not tested. Using a 
 virtual environment is recommended if the python version installed in the system does not match the version specified.
 The installation of [pyenv](https://github.com/pyenv/pyenv) in is explained below.
@@ -44,13 +44,13 @@ The installation of [pyenv](https://github.com/pyenv/pyenv) in is explained belo
     pyenv local inventory_tracker
     ```
 
-##Dependencies
+## Dependencies
 The dependencies can be installed by using the following command.
 ```ssh
 pip install -r requirements.txt
 ```
 
-##Running the Application
+## Running the Application
 To run the application, use the following command.
 ```ssh
 uvicorn main:app
@@ -58,7 +58,7 @@ uvicorn main:app
 By default, the app runs in 8000 port. It can be changed by providing the argument `--port $PORT` where `$PORT` is 
 replaced with the desired port number.
 
-##Testing
+## Testing
 The code coverage is approximately 99% as tests aren't written for database model class. The tests can be run by using 
 the following command:
 ```ssh
@@ -68,7 +68,7 @@ Whereas the report of the coverage can be generated using the below command:
 ```ssh
 coverage report
 ```
-##API Collection
+## API Collection
 The postman collection for the APIs are can be found [here](https://www.getpostman.com/collections/f005668a50bc30d91462).
 These API urls are given an environmental variable `base_url` so that any url can be assigned to the variable, be it 
 local or production.
