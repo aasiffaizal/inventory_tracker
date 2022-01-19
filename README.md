@@ -13,7 +13,7 @@ The steps for running the application locally are also provided below.
 ## Table of Contents
 
 * **[Installation](#installation)**
-  * [MySQl](#mysql)
+  * [MySQL](#mysql)
   * [Python](#python)
 * **[Dependencies](#dependencies)**
 * **[Running the Application](#running-the-application)**
